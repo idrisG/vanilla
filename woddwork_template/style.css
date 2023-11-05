@@ -1,0 +1,84 @@
+body {
+    margin: 0;
+    background-image: url(background.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    overflow-x: hidden;
+}
+h1 {
+    font-size: 4em;
+}
+section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+section:nth-child(2n+2) {
+    background-color: #e1e1e1;
+}
+section:nth-child(2n+3) {
+    background-color: #f1f1f1;
+}
+.hidden {
+    opacity: 0;
+    filter: blur(5px);
+    transform: translateY(50vh);
+    transition: all 1s;
+}
+section.hidden {
+    margin-top: -40vh;
+}
+.bottom { /* To detect this component when it enters the view */
+    margin-top: -50vh; /* To counter the translateY(50vh) */
+}
+.bottom.show {
+    margin-top: 0; /* To cancel the margin once we display the component */
+}
+.right {
+    transform: translateX(50%);
+}
+.left {
+    transform: translateX(-50%);
+}
+.blur {
+    transform: translateY(0);
+    transition-delay: 600ms;
+}
+.show {
+    margin-top: 0;
+    opacity: 1;
+    filter: blur(0);
+    transform: translateY(0);
+}
+section.show {
+    margin-top: 0;
+}
+
+.arrow-down-section {
+    justify-content: flex-end;
+    margin-bottom: 100px;
+}
+.arrow-down-section .bounce {
+    animation-duration: 1s;
+    animation-name: bounceUpDown;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+@keyframes bounceUpDown {
+    from {
+        transform: translateY(0);
+    }
+  
+    to {
+        transform: translateY(-30px);
+    }
+}
+@media(prefers-reduced-motion) {
+    .hidden {
+        transition: none;
+    }
+}

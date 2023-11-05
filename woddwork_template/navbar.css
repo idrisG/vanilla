@@ -1,0 +1,191 @@
+:root {
+    --primary-color-2: rgb(232, 230, 227);
+    --secondary-bg-color: #020276;
+    --primary-bg-color: #fff;
+    --link-hover-color: #f8c76c;
+}
+/* body {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin: 0;
+    font-family: sans-serif;
+    height: 200vh;
+} */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    background-color: var(--secondary-bg-color);
+    padding: 8px 4%;
+}
+img {
+    height: inherit;
+    width: auto;
+}
+a {
+    color: var(--primary-color-2);
+    text-decoration: none;
+    height: inherit;
+}
+a:hover {
+    color: var(--link-hover-color);
+}
+.logo {
+    height: 90px;
+}
+.header-links {
+    display: flex;
+    gap: 16px;
+}
+.nav-link {
+    padding: 0 16px;
+    font-size: 20px;
+}
+.nav-link.nav-content:hover {
+    padding-bottom: 16px;
+    margin-bottom: -16px;
+}
+.nav-link.nav-content .nav-link> a:hover {
+    cursor: default;
+    color: var(--primary-color-2);
+}
+.nav-link-sub-list {
+    display: none;
+    padding: 16px;
+    background-color: var(--secondary-bg-color);
+}
+.nav-link:hover > .nav-link-sub-list {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    margin-top: 16px;
+    gap: 8px;
+}
+.separator {
+    margin: 0 15%;
+    border: solid 0.3px var(--primary-color-2);
+}
+
+
+
+
+
+
+/* 
+:root {
+    --primary-bg-color: rgb(24, 26, 27);
+    --primary-color: rgb(232, 230, 227);
+    --primary-color-2: rgb(232, 230, 227);
+
+    --secondary-bg-color: rgb(126, 2, 6);
+    --secondary-color: rgb(253, 95, 101);
+
+    --footer-bottom-bg-color: #02256c;
+    --footer-color: rgba(232, 230, 227, 0.59);
+
+    --input-bg-color: rgb(29, 31, 32);
+    --input-border-color: rgb(65, 70, 73);
+    --input-color: rgb(156, 148, 135);
+
+    --horizontal-padding: 4%;
+    
+    --primary-bg-color: rgb(232, 230, 227);
+
+
+    --primary-color: rgb(24, 26, 27);
+    --primary-color-2: rgb(232, 230, 227);
+    --primary-color-3: rgb(181, 181, 181);
+    --tertiary-bg-color: rgb(240, 240, 240);
+    
+    --input-bg-color: rgb(207, 206, 206);
+    --input-border-color: rgb(65, 70, 73);
+    --input-color: rgb(29, 31, 32);
+
+    --secondary-bg-color: rgb(17, 76, 121);
+    --secondary-color: rgb(17, 76, 121);
+    --secondary-bg-color: #003499;
+    --secondary-bg-color: #020381;
+    --secondary-bg-color: #020276;
+    --secondary-bg-color-2: #003499;
+    --primary-bg-color: #fff;
+
+    --button-hover-bg: #FFB606;
+    --card-bg-color: #fff;
+
+    --link-hover-color: #f8c76c;
+    
+}
+
+html {
+    scroll-behavior: smooth;
+}
+body {
+    background-color: var(--primary-bg-color);
+    color: var(--primary-color);
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin: 0;
+    font-size: 16px;
+    font-family: sans-serif;
+    background-image: url("../images/NQA/IMG-20230910-WA0001.jpg") !important;
+    background-size: contain;
+    background-repeat: no-repeat;
+    height: 200vh;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 16px;
+    position: sticky;
+    top: 0;
+    transition: all 0.3s ease-in-out;
+    z-index: 5;
+    background-color: transparent;
+    background-color: var(--secondary-bg-color);
+}
+
+a.active, 
+.nav-link.active > a, 
+.nav-link.active > .nav-link > a {
+    color: var(--link-hover-color);
+}
+
+.nav-scrolled .nav-link-sub-list {
+    background-color: var(--primary-bg-color);
+    border: solid 1px #000;
+    color: var(--primary-color);
+}
+.nav-up {
+    top: -200px;
+    transition: all 0.3s ease-in-out;
+}
+.nav-down {
+    transition: all 0.3s ease-in-out;
+}
+.nav-scrolled {
+    background-color: var(--secondary-bg-color-2);
+    transition: all 0.3s ease-in-out;
+}
+.nav-scrolled .nav-link-sub-list > a {
+    color: var(--primary-color);
+}
+.nav-link-sub-list > a:hover {
+    color: var(--link-hover-color);
+}
+#menu-toggle {
+    display: none;
+    z-index: 6;
+}
+.small-logo a {
+    height: inherit;
+}
+.small-logo {
+    display: none;
+} */

@@ -1,0 +1,115 @@
+:root {
+    --primary-color-2: rgb(232, 230, 227);
+    --secondary-bg-color: #020276;
+    --primary-bg-color: #fff;
+    --link-hover-color: #f8c76c;
+    --primary-color-3: #c1c1c1
+}
+body {
+    margin: 0;
+    background-image: url(background.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    overflow-x: hidden;
+}
+h1 {
+    font-size: 4em;
+}
+img {
+    height: inherit;
+    width: auto;
+}
+section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    position: relative;
+    background-color: #f1f1f1;
+}
+.hidden {
+    opacity: 0;
+    filter: blur(5px);
+    transform: translateY(50vh);
+    transition: all 1s;
+}
+section.hidden {
+    margin-top: -40vh;
+}
+.bottom { /* To detect this component when it enters the view */
+    margin-top: -50vh; /* To counter the translateY(50vh) */
+}
+.bottom.show {
+    margin-top: 0; /* To cancel the margin once we display the component */
+}
+.right {
+    transform: translateX(50%);
+}
+.left {
+    transform: translateX(-50%);
+}
+.blur {
+    transform: translateY(0);
+    transition-delay: 600ms;
+}
+.show {
+    margin-top: 0;
+    opacity: 1;
+    filter: blur(0);
+    transform: translate(0, 0);
+}
+section.show {
+    margin-top: 0;
+}
+
+.arrow-down-section {
+    justify-content: flex-end;
+    background-color: unset;
+    min-height: 90vh;
+}
+.arrow-down-section .bounce {
+    position: absolute;
+    animation-duration: 1s;
+    animation-name: bounceUpDown;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    transition: all 1s;
+}
+section:nth-child(3) {
+    background-color: #e1e1e1;
+}
+section:nth-child(5) {
+    background-image: url(city_path.jpg);    
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+section:nth-child(6) {
+    background-image: url(meadow_path.jpg);    
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+}
+section:nth-child(7) {
+    background-image: url(desert_path.jpg);  
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+}
+section.fade-in {
+    background: unset;
+}
+@keyframes bounceUpDown {
+    from {
+        transform: translateY(0);
+    }
+  
+    to {
+        transform: translateY(-30px);
+    }
+}

@@ -1,0 +1,178 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="./style.css"/>
+        <script src="./script.js"></script>
+    </head>
+
+    <body>
+        <div id="navbar">
+            <div class="navbar">
+                <h1>Page Title</h1>
+                <div class="tabs">
+                    <input id="tab-1" type="radio" name="group"/>
+                    <input id="tab-2" type="radio" name="group"/>
+                    <input id="tab-3" type="radio" name="group"/>
+                    <input id="tab-4" type="radio" name="group"/>
+
+                    <div class="buttons">
+                        <label class="material-symbols-outlined" for="tab-1" onclick="homeClickedHeader()">home</label>
+                        <label class="material-symbols-outlined" for="tab-2" onclick="notificationClickedHeader()">notification</label>
+                        <label class="material-symbols-outlined" for="tab-3" onclick="favoriteClickedHeader()">favorite</label>
+                        <label class="material-symbols-outlined" for="tab-4" onclick="settingClickedHeader()">settings</label>
+                        <div class="underline"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="content">
+            <nav id="sidebar">
+                <div class="sidebar">
+                    <div class="sidebar-content">
+                        <button onclick="homeClickedSide()">
+                            <span>
+                                <i>home</i>
+                                <span>Home</span>
+                            </span>
+                        </button>
+                        <button class="material add" onclick="addClicked()">
+                            <span>
+                                <i>add</i>
+                                <span>Something</span>
+                            </span>
+                        </button>
+                        <button class="material add">
+                            <span>
+                                <i>add</i>
+                                <span>Anything</span>
+                            </span>
+                        </button>
+                        <button class="material">
+                            <span>
+                                <i>Last</i>
+                                <span>button</span>
+                            </span>
+                        </button>
+                    </div>
+                </div>
+            </nav>
+            <div class="content">
+                <div class="login-form form" *ngIf="!(loggedIn|async)">
+                    <form [formGroup]="loginForm" (ngSubmit)="login()">
+                        <div>
+                            <label for="username">Username</label>
+                            <input class="username" type="text" name="username" formControlName="username"/>
+                        </div>
+                        <div>
+                            <label for="password">Password</label>
+                            <input class="password" type="password" name="password" formControlName="password"/>
+                        </div>
+                        <button type="submit" class="btn btn-submit" >Login</button>
+                    </form>
+                </div>
+                <p>I will put a paragraph here to see what happens, I will start by speaking about life ande futil things until I think I have written enough. If you have any question about what I am writing, don't ask me, I won't respond to anything you will ask</p>
+                <div  class="form">
+                    <form ><!--[formGroup]="formUser" (ngSubmit)="create()">-->
+                        <label for="username">Username</label>
+                        <input type="text"
+                        class="form-control"
+                        id="username"
+                        name="username"
+                        placeholder="Username">
+                        
+                        <div class="input-error" *ngIf="username?.invalid && (username?.touched || username?.dirty)">
+                            <div *ngIf="username?.errors?.['required']">Username cannot be empty</div>
+                            <div *ngIf="username?.errors?.['maxlength']">Username cannot be longer than 40 characters</div>
+                            <div *ngIf="username?.errors?.['pattern']">Username cannot contain special characters beside underscore</div>
+                        </div>
+                        
+                        <label for="birthdate">Birthdate</label>
+                        <input type="date"
+                        class="form-control"
+                        id="birthdate"
+                        name="birthdate"
+                        placeholder="2000-01-01">
+                        
+                        <div class="input-error" *ngIf="birthdate?.invalid && (birthdate?.touched || birthdate?.dirty)">
+                            <div *ngIf="birthdate?.errors?.['required']">Birthdate cannot be empty</div>
+                        </div>
+                        
+                        <label for="country">Country</label>
+                        <select name="country" id="country" >
+                            <option value="France" selected>France</option>
+                            <option value="Germany">Germany</option>
+                            <option value="Italy">Italy</option>
+                        </select>
+                
+                        <label for="phoneNumber">Phone Number</label>
+                        <input type="tel" 
+                        class="form-control"
+                        id="phoneNumber"
+                        name="phoneNumber"
+                        placeholder="01 02 03 04 05">
+                        
+                        <div class="input-error" *ngIf="phoneNumber?.invalid && (phoneNumber?.touched || phoneNumber?.dirty)">
+                            <div *ngIf="phoneNumber?.errors?.['pattern']">PhoneNumber format is : XX XX XX XX XX</div>
+                        </div>
+                        
+                        <label for="gender">Gender</label>
+                        <select id="gender" name="gender">
+                            <option value=></option>
+                            <option value="MALE">Male</option>
+                            <option value="FEMALE">Female</option>
+                        </select>
+                        
+                        <button type="submit" class="btn btn-submit" >Create</button>
+                    </form>
+                </div>
+                <div class="users">
+                    <div class="user">
+                        <div class="row">
+                            <div class="name">Username</div>
+                            <div class="value">Idris</div>
+                        </div>
+                        <div class="row">
+                            <div class="name">Birthdate</div>
+                            <div class="value">21/11/1997</div>
+                        </div>
+                        <div class="row">
+                            <div class="name">Country</div>
+                            <div class="value">France</div>
+                        </div>
+                    </div>
+                    <div class="user">
+                        <div class="row">
+                            <div class="name">Username</div>
+                            <div class="value">Idris</div>
+                        </div>
+                        <div class="row">
+                            <div class="name">Birthdate</div>
+                            <div class="value">21/11/1997</div>
+                        </div>
+                        <div class="row">
+                            <div class="name">Country</div>
+                            <div class="value">France</div>
+                        </div>
+                    </div>
+                    <div class="user">
+                        <div class="row">
+                            <div class="name">Username</div>
+                            <div class="value">Idris</div>
+                        </div>
+                        <div class="row">
+                            <div class="name">Birthdate</div>
+                            <div class="value">21/11/1997</div>
+                        </div>
+                        <div class="row">
+                            <div class="name">Country</div>
+                            <div class="value">France</div>
+                        </div>
+                    </div>
+        
+                </div>
+            </div>
+        </div>
+        <footer class="footer">
+
+        </footer>
+    </body>
+</html>

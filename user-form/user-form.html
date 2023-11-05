@@ -1,0 +1,61 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="./style.css"/>
+    </head>
+    <body>
+        <div  class="form">
+            <form ><!--[formGroup]="formUser" (ngSubmit)="create()">-->
+                <label for="username">Username</label>
+                <input type="text"
+                class="form-control"
+                id="username"
+                name="username"
+                placeholder="Username">
+                
+                <div class="input-error" *ngIf="username?.invalid && (username?.touched || username?.dirty)">
+                    <div *ngIf="username?.errors?.['required']">Username cannot be empty</div>
+                    <div *ngIf="username?.errors?.['maxlength']">Username cannot be longer than 40 characters</div>
+                    <div *ngIf="username?.errors?.['pattern']">Username cannot contain special characters beside underscore</div>
+                </div>
+                
+                <label for="birthdate">Birthdate</label>
+                <input type="date"
+                class="form-control"
+                id="birthdate"
+                name="birthdate"
+                placeholder="2000-01-01">
+                
+                <div class="input-error" *ngIf="birthdate?.invalid && (birthdate?.touched || birthdate?.dirty)">
+                    <div *ngIf="birthdate?.errors?.['required']">Birthdate cannot be empty</div>
+                </div>
+                
+                <label for="country">Country</label>
+                <select name="country" id="country" >
+                    <option value="France" selected>France</option>
+                    <option value="Germany">Germany</option>
+                    <option value="Italy">Italy</option>
+                </select>
+        
+                <label for="phoneNumber">Phone Number</label>
+                <input type="tel" 
+                class="form-control"
+                id="phoneNumber"
+                name="phoneNumber"
+                placeholder="01 02 03 04 05">
+                
+                <div class="input-error" *ngIf="phoneNumber?.invalid && (phoneNumber?.touched || phoneNumber?.dirty)">
+                    <div *ngIf="phoneNumber?.errors?.['pattern']">PhoneNumber format is : XX XX XX XX XX</div>
+                </div>
+                
+                <label for="gender">Gender</label>
+                <select id="gender" name="gender">
+                    <option value=></option>
+                    <option value="MALE">Male</option>
+                    <option value="FEMALE">Female</option>
+                </select>
+                
+                <button type="submit" class="btn btn-submit" >Create</button>
+            </form>
+        </div>
+    </body>
+</html>

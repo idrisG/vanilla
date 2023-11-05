@@ -1,0 +1,85 @@
+body {
+    margin: 0;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: rgb(0,1,36);
+    background: linear-gradient(90deg, rgba(0,1,36,1) 0%, rgba(255,255,255,0.15) 49%, rgba(161,0,0,1) 99%);
+    color: rgb(232, 230, 227);
+}
+a {
+    color: rgb(232, 230, 227);
+    text-decoration: none;
+}
+img {
+    width: inherit;
+    height: auto;
+}
+.flip-card {
+    background-color: transparent;
+    width: 30%;
+    height: 300px;
+    perspective: 1000px;
+}
+.flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+}
+.flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+}
+.flip-card-front, .flip-card-back {
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden; /* Hides back*/
+    backface-visibility: hidden; /* Hides back*/
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.flip-card-front {
+    background: rgb(2,0,36);
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(0,3,156,1) 49%, rgba(0,69,132,1) 99%);
+}
+.flip-card-back {
+    margin-top: -300px;
+    background: rgb(36,0,0);
+    background: linear-gradient(90deg, rgba(36,0,0,1) 0%, rgba(156,0,0,1) 49%, rgba(161,0,0,1) 99%);
+    transform: rotateY(180deg);
+}
+.flip-card-back > div {
+    padding: 16px;
+}
+.card-title {
+    font-size: 40px;
+    font-weight: 600;
+    padding-bottom: 16px;
+}
+.card-back {
+    font-size: 20px;
+}
+.phone-call-container {
+    width: 64px;
+    margin-bottom: 32px;
+    border-radius: 50%;
+}
+
+@media screen and (max-width: 1000px) {
+    .flip-card {
+        width: 50%;
+    }
+}
+@media screen and (max-width: 600px) {
+    .flip-card {
+        width: 80%;
+    }
+}

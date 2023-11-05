@@ -1,0 +1,56 @@
+body {
+    margin: 0;
+    background-image: url(background.jpg);
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    min-height: 200vh;
+}
+.arrow-container {
+    animation: bounceUpDown 1s alternate infinite;
+    transition: all 0.3s;
+}
+.arrow {
+    position: absolute;
+    width: 24px;
+    height: 124px;
+}
+.circle {
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background-color: #fff;
+    transform: translateY(-12px);
+}
+.circle.center {
+    transform: translateY(88px);
+}
+.branch {
+    position: absolute;
+    width: 24px;
+    height: 100px;
+    background-color: #fff;
+}
+.arrow.left {
+    transform: translateX(26.870057685088806px) rotate(45deg);
+}
+.arrow.right {
+    transform: translateX(-26.870057685088806px) rotate(-45deg);
+}
+.hidden {
+    opacity: 0;
+}
+@keyframes bounceUpDown {
+    from {
+        transform: translateX(0) rotate(-90deg);
+    }
+  
+    to {
+        transform: translateX(-30px) rotate(-90deg);
+    }
+}

@@ -1,0 +1,47 @@
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+.carousel-container {
+    height: 150px;
+    width: 90%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: nowrap;
+    gap: 64px;
+    overflow: hidden;
+    border-left: solid 1px black;
+    border-right: solid 1px black;
+}
+.carousel-track {
+    animation: scroll-l 10s linear infinite;
+    display: flex;
+    width: 350px;
+}
+.carousel {
+    height: 100px;
+    display: flex;
+}
+.carousel img {
+    height: inherit;
+    width: auto;
+    display: inline-block;
+}
+@keyframes scroll-l {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        /* 
+            350px = track width
+            6 = number of non repetitive track
+            64px = gap
+            7 = number of non repetitive track + 1 
+        */
+        transform: translateX(calc(-350px * 6 - (64px/7 * 6))); 
+    }
+}
