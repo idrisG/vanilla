@@ -1,0 +1,116 @@
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* align-items: center; */
+    min-height: 100vh;
+    background-color: #fff;
+    margin: 0;
+    overflow: hidden;
+}
+.background {
+    position: absolute;
+    width: 100vw;
+    height: 905px;
+    top: 1%;
+    overflow: hidden;
+    /* top: 10%; */
+    left: 0;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+}
+.background img {
+    position: relative;
+    margin-right: -3px;
+    animation: scroll-l 10s linear infinite;
+}
+.background img:nth-child(2n) {
+    margin-left: -3px;
+}
+.img-container {
+    width: 159px;
+    height: 206px;
+    margin-left: -159px;
+    overflow: hidden;
+    animation: scroll-l-inverse 20s linear infinite;
+}
+img {
+    position: absolute;
+}
+.img-container img {
+    visibility: hidden;
+}
+.img-container img:nth-child(1) {
+    animation: disapear 1s linear 1s infinite;
+}
+.img-container img:nth-child(2) {
+    animation: disapear 1s linear 0.9s infinite;
+}
+.img-container img:nth-child(3) {
+    animation: disapear 1s linear 0.8s infinite;
+}
+.img-container img:nth-child(4) {
+    animation: disapear 1s linear 0.7s infinite;
+}
+.img-container img:nth-child(5) {
+    animation: disapear 1s linear 0.6s infinite;
+}
+.img-container img:nth-child(6) {
+    animation: disapear 1s linear 0.5s infinite;
+}
+.img-container img:nth-child(7) {
+    animation: disapear 1s linear 0.4s infinite;
+}
+.img-container img:nth-child(8) {
+    animation: disapear 1s linear 0.3s infinite;
+}
+.img-container img:nth-child(9) {
+    animation: disapear 1s linear 0.2s infinite;
+}
+.img-container img:nth-child(10) {
+    animation: disapear 1s linear 0.1s infinite;
+}
+.img-container img:nth-child(11) {
+    animation: disapear 1s linear 0s infinite;
+}
+@keyframes disapear {
+    0% {
+        visibility: visible;
+    }
+    12% {
+        visibility: hidden;
+    }
+    100% {
+        visibility: hidden;
+    }
+}
+@keyframes scroll-l {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        /* 
+            350px = track width 1000*2 0
+            6 = number of non repetitive track
+            64px = gap
+            7 = number of non repetitive track + 1 
+        */
+        transform: translateX(calc(-1000px * 2));
+    }
+}
+
+@keyframes scroll-l-inverse {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        /* 
+            350px = track width 1000*2 0
+            6 = number of non repetitive track
+            64px = gap
+            7 = number of non repetitive track + 1 
+        */
+        transform: translateX(100vw);
+    }
+}

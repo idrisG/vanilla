@@ -1,0 +1,24 @@
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #fff;
+    margin: 0;
+}
+.img-container {
+    animation: rotate 10s cubic-bezier(1, 0.1, 0.25, 1) infinite;
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg) scale(2) translateX(200px);
+    }
+    50% {
+        transform: rotate(3600deg) scale(0) translate(100px);
+    }
+    100% {
+        transform: rotate(0deg) scale(2) translateX(200px);
+    }
+}

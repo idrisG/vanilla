@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="style.css" />
+        <title>Bouncing Arrow Generator</title>
+    </head>
+    <body>
+        <div class="inputs-container" id="inputs">
+            <div class="sizes-input">
+                <label for="">Width of arrow branch (px)</label>
+                <input id="width" type="number" />
+
+                <label for="">Length of arrow branch (px)</label>
+                <input id="length" type="number" />
+            </div>
+            <div class="orientation-inputs">
+                <label for="">Radius of arrow (deg)</label>
+                <input id="radius" type="number" value="90" />
+
+                <label for="">Direction of arrow (deg)</label>
+                <input id="direction" type="number" value="0" />
+            </div>
+            <button onclick="generateBouncingArrow()">Generate</button>
+            <textarea id="code" class="code-container"> </textarea>
+        </div>
+        <div id="preview" class="preview"></div>
+    </body>
+    <script src="script.js"></script>
+</html>

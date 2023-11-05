@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="style.css" />
+        <title>Spinner Generator</title>
+    </head>
+    <body>
+        <div class="inputs-container" id="inputs">
+            <div>
+                <div>
+                    <label for="">Number of points inner</label>
+                    <input id="points-inner" type="number" />
+                </div>
+                <div>
+                    <label for="">Number of points outer</label>
+                    <input id="points-outer" type="number" />
+                </div>
+            </div>
+            <div>
+                <div>
+                    <label for="">Radius of Spinner inner (in pixels)</label>
+                    <input id="radius-inner" type="number" />
+                </div>
+                <div>
+                    <label for="">Radius of Spinner outer (in pixels)</label>
+                    <input id="radius-outer" type="number" />
+                </div>
+            </div>
+            <button onclick="generateSpinner()">Generate</button>
+            <textarea id="code" class="code-container"> </textarea>
+        </div>
+        <div id="preview" class="preview"></div>
+        <a href="../" style="position: absolute; top: 12px; left: 12px">Back</a>
+    </body>
+    <script src="script.js"></script>
+</html>

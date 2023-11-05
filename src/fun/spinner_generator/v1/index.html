@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="style.css" />
+        <title>Spinner Generator</title>
+    </head>
+    <body>
+        <div class="inputs-container" id="inputs">
+            <label for="">Number of points</label>
+            <input id="points" type="number" />
+
+            <label for="">Radius of Spinner (in pixels)</label>
+            <input id="radius" type="number" />
+
+            <button onclick="generateSpinner()">Generate</button>
+            <textarea id="code" class="code-container"> </textarea>
+        </div>
+        <div id="preview" class="preview"></div>
+    </body>
+    <script src="script.js"></script>
+</html>
