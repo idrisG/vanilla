@@ -1,0 +1,186 @@
+:root {
+    --header-bg: #c47a7a;
+}
+body {
+    margin: 0;
+    background-color: #c1c1c1;
+}
+header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 4%;
+    position: sticky;
+    top: 0;
+    transition: all 0.3s ease-in-out;
+    z-index: 5;
+    background-color: var(--header-bg);
+    box-shadow: 0 4px 12px 1px rgba(61, 61, 61, 0.3);
+    min-height: 100px;
+}
+img {
+    height: inherit;
+    width: auto;
+}
+ul {
+    list-style-type: none;
+}
+a {
+    color: #f1f1f1;
+    text-decoration: none;
+}
+.nav-up {
+    top: -200px;
+    transition: all 0.3s ease-in-out;
+}
+/* Separate styles for different styles depending on user has scrolled or not */
+.nav-down {
+    transition: all 0.3s ease-in-out;
+}
+.nav-scrolled {
+    transition: all 0.3s ease-in-out;
+}
+.logo {
+    height: 90px;
+}
+.logo a, .small-logo a {
+    height: inherit;
+}
+.small-logo {
+    display: none;
+}
+.header-links {
+    display: flex;
+    flex-direction: row;
+    gap: 16px;
+}
+.nav-link {
+    padding: 0 16px;
+    font-size: 20px;
+}
+a.active, .nav-link.active > a, .nav-link > a:hover {
+    color: var(--link-hover-color);
+}
+#menu-toggle {
+    display: none;
+    z-index: 6;
+}
+@media screen and (max-width: 1090px) {
+    header {
+        flex-direction: column;
+        align-items: center;
+        padding: 0;
+        min-height: 0;
+    }
+    .logo {
+        display: none;
+    }
+    .nav-up, .nav-down {
+        top: 0;
+        padding: 0;
+        min-height: 0;
+    }
+    .small-logo {
+        display: block;
+        height: 50px;
+        width: auto;
+        margin-top: 16px;
+    }
+    .menu-button-container{
+        display: flex;
+    }
+    .header-links {
+        position: absolute;
+        width: 200px;
+        top: 0;
+        right: 0;
+        padding: 0;
+        margin: 0;
+        padding-left: 8px;
+        height: 100vh;
+        background-color: var(--header-bg);
+    }
+    .nav-link {
+        padding: 16px 0;
+        height: unset;
+        border-bottom: solid 1px var(--third-color);
+        margin-left: -8px;
+        padding-left: 16px;
+    }
+    #menu-toggle:checked ~ .header-links .nav-formation:hover .nav-link-sub-list {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        text-align: center;
+        width: 75%;
+        padding-bottom: 16px;
+    }
+    #menu-toggle {
+        display: none;
+    }
+    .btn-container {
+        position: fixed;
+        top: 40px;
+        right: 0;
+        margin-right: 8px;
+        margin-top: -12px;
+        z-index: 6;
+        width: 30px;
+        height: 30px;
+    }
+    .menu-button,
+    .menu-button::before,
+    .menu-button::after {
+      display: block;
+      background-color: #e1e1e1;
+      position: absolute;
+      height: 4px;
+      width: 30px;
+      transition: transform 400ms cubic-bezier(0.23, 1, 0.32, 1);
+      border-radius: 2px;
+      z-index: 5;
+    }
+    div.menu-button {
+        position: fixed;
+        top: 40px;
+    }
+    /* Top layer of burger */
+    .menu-button::before {
+        content: '';
+        margin-top: -8px;
+      }
+    /* Bottom layer of burger */
+    .menu-button::after {
+        content: '';
+        margin-top: 8px;
+    }
+    #menu-toggle:checked + .menu-button-container .menu-button::before {
+        margin-top: 0px;
+        transform: rotate(405deg);
+        background-color: #e1e1e1;
+    }
+    #menu-toggle:checked + .menu-button-container .menu-button {
+        background: rgba(255, 255, 255, 0);/* make middle layer of burger transparent */
+    }
+    #menu-toggle:checked + .menu-button-container .menu-button::after {
+        margin-top: 0px;
+        transform: rotate(-405deg);
+        background-color: #e1e1e1;
+    }
+    #menu-toggle ~ .header-links {
+        display: none;
+        transition: height 400ms cubic-bezier(0.23, 1, 0.32, 1);
+    }
+    #menu-toggle:checked ~ .header-links {
+        display: block;
+        transition: height 400ms cubic-bezier(0.23, 1, 0.32, 1);
+    }
+    .menu-button-container {
+        padding: 0;
+    }
+    .menu-button {
+        right: 0;
+        margin-right: 8px;
+    }
+}

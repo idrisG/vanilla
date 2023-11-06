@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="navbar.css">
+    <title>Responsive navbar | becomes side bar on mobile</title>
+</head>
+<body>
+    <header id="header">
+        <div class="logo">
+            <a href="#"><img src="logonqi.png" alt="Logo"></a>
+        </div>
+        <input id="menu-toggle" type="checkbox"/>
+        <label class='menu-button-container' for="menu-toggle">
+            <div class="btn-container"><div class='menu-button'></div></div>
+        </label>
+        <ul class="header-links">
+            <li class="small-logo"><a href="#"><img src="logonqi.png" alt="Logo"></a></li>
+            <li class="nav-link"><a href="./">Accueil</a></li>
+            <li class="nav-link"><a href="./catalog">Nos Gateaux</a></li>
+            <li class="nav-link"><a href="./gallerie">Gallerie Photo</a></li>
+            <li class="nav-link"><a href="./contact">Contactez-nous</a></li>
+            <li class="nav-link active"><a href="./about">À Propos</a></li>
+        </ul>
+    </header>
+</body>
+<script src="script.js"></script>
+</html>
