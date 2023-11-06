@@ -4,6 +4,7 @@
 body {
     margin: 0;
     background-color: #c1c1c1;
+    min-height: 200vh;
 }
 header {
     display: flex;

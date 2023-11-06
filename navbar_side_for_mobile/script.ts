@@ -1,4 +1,3 @@
-export{}
 const header = document.querySelector('header');
 var didScroll = false;
 var lastScrollTop = 0;
@@ -14,8 +13,8 @@ setInterval(() => {
 }, 250);
 function hasScrolled() {
     if(header) {
-        var navbarHeight = header.offsetHeight;
-        var st = window.scrollY;
+        const navbarHeight = header.offsetHeight;
+        const st = window.scrollY;
         if (Math.abs(lastScrollTop-st) <= delta) {
             return;
         }
