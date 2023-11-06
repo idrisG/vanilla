@@ -1,5 +1,4 @@
-'use strict';
-Object.defineProperty(exports, '__esModule', { value: true });
+"use strict";
 const num = 10;
 const str = '10';
 const sum = num + Number(str);
