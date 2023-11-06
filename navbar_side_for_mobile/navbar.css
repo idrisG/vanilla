@@ -4,6 +4,7 @@
 body {
     margin: 0;
     background-color: #c1c1c1;
+    background: linear-gradient(180deg, rgb(36, 0, 0) 0%, rgba(255, 255, 255, 0.15) 99%);
     min-height: 200vh;
 }
 header {
