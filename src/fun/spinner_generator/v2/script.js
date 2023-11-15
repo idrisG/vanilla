@@ -18,7 +18,7 @@ function generateSpinner() {
         preview.innerHTML = `${codes.html}\n<style>${codes.css}</style>`;
         code.innerHTML = `${codes.html}\n<style>\n${codes.css}</style>`.replace(
             '\n',
-            '&#013; &#010;'
+            '&#013; &#010;',
         );
     }
 }

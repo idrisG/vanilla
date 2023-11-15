@@ -23,12 +23,15 @@ function generateSpinner() {
             numberPoints.match(numberRegex) &&
             radiusSpinner.match(numberRegex)
         ) {
-            var codes = generateCode(Number(numberPoints), Number(radiusSpinner));
+            var codes = generateCode(
+                Number(numberPoints),
+                Number(radiusSpinner),
+            );
             preview.innerHTML = `${codes.html}\n<style>${codes.css}</style>`;
             code.innerHTML =
                 `${codes.html}\n<style>\n${codes.css}</style>`.replace(
                     '\n',
-                    '&#013; &#010;'
+                    '&#013; &#010;',
                 );
         }
     }

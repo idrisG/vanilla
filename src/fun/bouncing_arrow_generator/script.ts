@@ -1,4 +1,4 @@
-export {}
+export {};
 const numberRegex = /[1-9][0-9]*/;
 const numberRegexAccepts0 = /[0-9]+/;
 
@@ -53,7 +53,7 @@ function generateBouncingArrow() {
                         code.innerHTML =
                             `${codes.html}\n<style>\n${codes.css}</style>`.replace(
                                 '\n',
-                                '&#013; &#010;'
+                                '&#013; &#010;',
                             );
                     }
                 }
@@ -74,7 +74,7 @@ function generateCode(
     width: number,
     length: number,
     radius: number,
-    direction: number
+    direction: number,
 ) {
     const angle = (Math.PI * radius) / 360;
     const directionAngle = (Math.PI * direction) / 180;
@@ -115,13 +115,13 @@ function generateCode(
     }
     .arrow.left {
         transform: translateX(${translate - trans - width / 2}px) rotate(${
-        radius / 2
-    }deg);
+            radius / 2
+        }deg);
     }
     .arrow.right {
         transform: translateX(-${translate - trans + width / 2}px) rotate(-${
-        radius / 2
-    }deg);
+            radius / 2
+        }deg);
     }
     
     @keyframes bounceUpDown {
