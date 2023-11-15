@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Modal</title>
+</head>
+<body>
+    <section class="modal-button-section">
+        <button onclick="openModal('modal-1')">Open Modal</button>
+    </section>
+    <section class="modal" id="modal-1" onclick="closeModal('modal-1')">
+        <div class="modal-content" onclick="clickInModal()">
+            <h1>I AM A MODAL</h1>
+        </div>
+    </section>
+</body>
+<script src="script.js"></script>
+</html>
